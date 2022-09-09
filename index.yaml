@@ -3,6 +3,16 @@ entries:
   vault-autounseal:
   - apiVersion: v2
     appVersion: v1.0.0
+    created: "2022-09-09T11:04:07.045586252Z"
+    description: A Helm chart for Kubernetes
+    digest: 52d0b38a4b079a9db36c269c367a283976f86723060218cbddef21c2866da7e7
+    name: vault-autounseal
+    type: application
+    urls:
+    - https://github.com/camaeel/vault-autounseal/releases/download/vault-autounseal-0.2.0/vault-autounseal-0.2.0.tgz
+    version: 0.2.0
+  - apiVersion: v2
+    appVersion: v1.0.0
     created: "2022-09-09T11:00:27.969220925Z"
     description: A Helm chart for Kubernetes
     digest: b879f9205a33db9210db1208a695e47134926023042664f27e794ed6e4803b66
@@ -11,4 +21,4 @@ entries:
     urls:
     - https://github.com/camaeel/vault-autounseal/releases/download/vault-autounseal-0.1.0/vault-autounseal-0.1.0.tgz
     version: 0.1.0
-generated: "2022-09-09T11:00:27.969225225Z"
+generated: "2022-09-09T11:04:07.045593252Z"
