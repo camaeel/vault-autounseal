@@ -106,9 +106,9 @@ def read_secret(name):
     k8s_secret = api_instance.read_namespaced_secret(
         name=name, namespace=namespace
     ).data
-    for secret in k8s_secret.values():
-        key = base64.b64decode(secret)
-        vault_unseal(key.decode())
+    for k,v in k8s_secret:
+        key = base64.b64decode(v)
+        vault_unseal(key.decode(), k)
 
 
 def get_secret(name):
@@ -117,7 +117,7 @@ def get_secret(name):
         return True
 
 
-def vault_unseal(key):
+def vault_unseal(key, key_name):
     payload = {"key": f"{key}"}
     try:
         requests.put(
@@ -130,7 +130,7 @@ def vault_unseal(key):
     if key is None:
         pass
     else:
-        logger.info(f"Vault has been unsealed via key {key}")
+        logger.info(f"Vault has been unsealed via key {key_name}")
 
 
 def get_seal_status():
